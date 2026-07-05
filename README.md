@@ -50,6 +50,11 @@ Users can publish new content via a recipe creation form. They can input the rec
 
 [gif goes here]
 
+### Recipe Management
+
+Users can modify their existing recipes or remove their posts from the application. This section also includes the administrative function to reset the database to its default state, fulfilling the baseline RESTful API and database requirements.
+
+[gif goes here]
 
 ### Custom Features
 
