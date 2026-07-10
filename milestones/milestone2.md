@@ -22,7 +22,7 @@ We were able to coordinate and schedule a meeting to discuss the wireframes, rel
 
 ### 2. What were some challenges your group faced in this unit?
 
-Figma wasn't letting us set up an easy way to reuse components for our high-fidelity digrams, but we were able to find a workaround. 
+Figma wasn't letting us set up an easy way to reuse components for our high-fidelity wireframe diagrams, but we were able to find a workaround. 
 
 ### 3. What additional support will you need in upcoming units as you continue to work on your final project?
 
