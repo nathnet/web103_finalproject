@@ -32,22 +32,13 @@ Table comment{
   created_at timestamp  
 }
 
-Table comment_like{  
-  comment_id integer [primary key, not null]  
-  user_id integer [primary key, not null]  
-}
 
 Table ingredient{  
   id integer [primary key]  
   name varchar [not null]  
+  quantity float [not null]
 }
 
-
-//many to one  
-Ref user_liked_comment: comment_like.user_id > user.id   
-
-//many to one  
-REF like_for_comment: comment_like.comment_id > comment.id  
 
 //many to many  
 Ref recipe_ingredient: recipe.id <> ingredient.id  
