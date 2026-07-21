@@ -1,17 +1,14 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar.jsx";
-import Sidebar from "./components/Sidebar.jsx";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home.jsx";
 
 function App() {
 	const [count, setCount] = useState(0);
 
 	return (
-		<>
-			<div>
-				<Navbar></Navbar>
-				<Sidebar className=""></Sidebar>
-			</div>
-		</>
+		<Routes>
+			<Route path="/" element={<Home />} />
+		</Routes>
 	);
 }
 
