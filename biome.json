@@ -18,13 +18,17 @@
     "rules": {
       "preset": "recommended",
       "suspicious": {
-        "noUnknownAtRules": "off"
+        "noUnknownAtRules": {
+          "level": "warn",
+          "options": {
+            "ignore": ["tailwind"]
+          }
+        }
       }
     }
   },
   "css": {
     "parser": {
-      "cssModules": true,
       "tailwindDirectives": true
     }
   }

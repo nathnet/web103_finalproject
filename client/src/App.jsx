@@ -1,12 +1,8 @@
-import { useState } from "react";
 import Navbar from "./components/Navbar.jsx";
+import "./index.css";
 
 function App() {
-  return (
-    <>
-      <Navbar></Navbar>
-    </>
-  );
+  return <Navbar />;
 }
 
 export default App;
