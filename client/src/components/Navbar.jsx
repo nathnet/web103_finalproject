@@ -8,6 +8,16 @@ function handleSignUp() {
   console.log("Sign Up clicked");
 }
 
+import SearchIcon from "../assets/Search-Icon.svg";
+
+function handleSignIn() {
+  console.log("Sign In clicked");
+}
+
+function handleSignUp() {
+  console.log("Sign Up clicked");
+}
+
 export default function Navbar() {
   return (
     <header className="flex items-center justify-between bg-primary p-5 font-heading font-medium">
