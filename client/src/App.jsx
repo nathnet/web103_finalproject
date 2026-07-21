@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar.jsx";
+import Sidebar from "./components/Sidebar.jsx";
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -8,6 +9,7 @@ function App() {
 		<>
 			<div>
 				<Navbar></Navbar>
+				<Sidebar className=""></Sidebar>
 			</div>
 		</>
 	);
