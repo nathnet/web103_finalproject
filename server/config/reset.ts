@@ -19,11 +19,12 @@ const userData: userDataType[] = JSON.parse(String(userFile)) as userDataType[]
 
 const dropAllTables = async() => {
     const dropAllTablesQuery =  `
-    DROP TABLE IF EXISTS recipe_categories;
+    DROP TABLE IF EXISTS recipes_categories;
+    DROP TABLE IF EXISTS comments;
     DROP TABLE IF EXISTS recipes;
     DROP TABLE IF EXISTS categories;
-    DROP TABLE IF EXISTS comments;
     DROP TABLE IF EXISTS users;
+ 
     `
     try{
         const res =  await pool.query(dropAllTablesQuery)
@@ -161,6 +162,48 @@ const seedRecipeTable = async() => {
     })
 }
 
+const createCommentsTable = async() => {
+    const createCommentsTableQuery = `
+    CREATE TABLE IF NOT EXISTS comments(
+        id serial PRIMARY KEY,
+        body text NOT NULL,
+        recipe_id integer NOT NULL,
+        user_id integer NOT NULL,
+        created_at TIMESTAMPTZ DEFAULT now(),
+        FOREIGN KEY(recipe_id) REFERENCES recipes(id),
+        FOREIGN KEY(user_id) REFERENCES users(id)
+
+    )
+    `
+     try{
+        const res = await pool.query(createCommentsTableQuery)
+        console.log("Comments table created sucessfully")
+    }
+    catch(error){
+        console.error("Error creating comments table: ", error)
+    }
+}
+
+const createRecipesCategoriesTable = async() => {
+    const createRecipesCategoriesTableQuery = `
+        CREATE TABLE IF NOT EXISTS recipes_categories(
+            category_id int NOT NULL,
+            recipe_id int NOT NULL,
+            PRIMARY KEY(category_id, recipe_id),
+            FOREIGN KEY(category_id) REFERENCES categories(id) ON UPDATE CASCADE,
+            FOREIGN KEY(recipe_id) REFERENCES recipes(id) ON UPDATE CASCADE
+
+        )
+    `
+      try{
+        const res = await pool.query(createRecipesCategoriesTableQuery)
+        console.log("recipes_categories table created sucessfully")
+    }
+    catch(error){
+        console.error("Error creating recipes_categories table: ", error)
+    }
+
+}
 
 const resetDatabase = async() => {
     await dropAllTables()
@@ -170,6 +213,10 @@ const resetDatabase = async() => {
     await seedCategoriesTable()
     await createRecipeTable()
     await seedRecipeTable()
+    await createRecipesCategoriesTable()
+    await createCommentsTable()
+
+    
 }
 
 resetDatabase()

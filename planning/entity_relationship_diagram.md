@@ -6,9 +6,8 @@ Reference the Creating an Entity Relationship Diagram final project guide in the
 Table user{  
   id integer [primary key]  
   github_id integer unique [not null]  
-  github_username integer [not null]  
   username varchar unique [not null]  
-  email varchar unique [not null]  
+  email varchar unique
   profile_image text   
   created_at timestamp   
 }
@@ -52,4 +51,4 @@ Ref recipe_comment: comment.recipe_id > recipe.id
 
 ## Add the Entity Relationship Diagram  
 
-![ERD](<erd.png>)
+![ERD](<erd>.png>)
