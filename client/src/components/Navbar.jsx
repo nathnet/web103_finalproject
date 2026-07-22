@@ -1,21 +1,11 @@
 import SearchIcon from "../assets/Search-Icon.svg";
 
-function handleSignIn() {
-  console.log("Sign In clicked");
-}
-
 function handleSignUp() {
   console.log("Sign Up clicked");
 }
 
-import SearchIcon from "../assets/Search-Icon.svg";
-
 function handleSignIn() {
   console.log("Sign In clicked");
-}
-
-function handleSignUp() {
-  console.log("Sign Up clicked");
 }
 
 export default function Navbar() {
