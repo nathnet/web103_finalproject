@@ -1,8 +1,12 @@
-import Navbar from "./components/Navbar.jsx";
-import "./index.css";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/Home.jsx";
 
 function App() {
-  return <Navbar />;
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
+  );
 }
 
 export default App;
